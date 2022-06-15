@@ -1,0 +1,3 @@
+/Users/davidfruhwirth/Documents/Uni/2_Semester/Introduction DS and AI/MISC/Klausur_1/tfidf/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/davidfruhwirth/Documents/Uni/2_Semester/Introduction DS and AI/MISC/Klausur_1/tfidf/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/davidfruhwirth/Documents/Uni/2_Semester/Introduction DS and AI/MISC/Klausur_1/tfidf/cmake-build-debug/CMakeFiles/tfidf.dir
