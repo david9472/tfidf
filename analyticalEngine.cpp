@@ -97,24 +97,35 @@ double analytical_engine::calculateCosineSim(const parsed_file& a, const parsed_
   return dotProduct/multi_length;
 }
 
-void analytical_engine::findMostRelevantDocument()
+void analytical_engine::getOrderedRelevantDocumentList(ranked_list& list)
 {
   typedef std::pair<double, std::string> row;
-  std::vector<row> ranking;
   for (const auto& doc : parsed_files_)
   {
-    auto& rank = ranking.emplace_back();
-    rank.second = doc.name_;
-    rank.first = calculateCosineSim(query_, doc);
+    auto& rank = list.emplace_back();
+    rank.name_ = doc.name_;
+    rank.rank_ = calculateCosineSim(query_, doc);
   }
 
-  std::sort(ranking.begin(), ranking.end(), [](const row& a, const row& b)
-  {
-    return a.first > b.first;
-  });
+  list.sort();
+}
 
-  for (const auto& i : ranking)
+void analytical_engine::computeSimilarityBetweenDocuments(comparison_list<double>& list)
+{
+  std::size_t iteration{1};
+  for (const auto& file_a : parsed_files_)
   {
-    std::cout << i.second << "   " << i.first << std::endl;
+    for (std::size_t i{iteration}; i < parsed_files_.size(); i++)
+    {
+      const auto file_b = parsed_files_.at(i);
+      if (file_a == file_b)
+        continue;
+
+      auto& it = list.emplace_back();
+      it.name_a_ = file_a.name_;
+      it.name_b_ = file_b.name_;
+      it.comparison_val_ = calculateCosineSim(file_a,file_b);
+    }
+    iteration++;
   }
 }

@@ -25,6 +25,10 @@ struct parsed_file
   void calculateTFIDF(const analytical_vector& idf);
 
   friend std::ostream& operator<<(std::ostream& out, const parsed_file& file);
+  bool operator==(const parsed_file& other) const
+  {
+    return (name_ == other.name_);
+  }
 };
 
 #endif //_PARSEDFILE_

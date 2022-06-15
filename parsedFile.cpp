@@ -62,7 +62,6 @@ void parsed_file::splitString(std::string& s, std::vector<std::string>& strings,
   prepString(it);
 }
 
-
 void parsed_file::splitFileIntoStrings(const std::shared_ptr<std::fstream>& file_)
 {
   if (!file_->is_open())

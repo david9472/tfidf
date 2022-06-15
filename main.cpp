@@ -1,7 +1,6 @@
 #include <iostream>
 #include "analyticalEngine.hpp"
 
-
 int main(int argc, char *argv[])
 {
   analytical_engine engine;
@@ -26,5 +25,12 @@ int main(int argc, char *argv[])
 
   std::cout << engine.query_ << std::endl;
 
-  engine.findMostRelevantDocument();
+  ranked_list list;
+  engine.getOrderedRelevantDocumentList(list);
+  std::cout << list;
+
+  comparison_list<double> lst;
+  engine.computeSimilarityBetweenDocuments(lst);
+  std::cout << lst;
+
 }

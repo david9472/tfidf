@@ -11,11 +11,6 @@ namespace Util
   void getFilenameFromPath(const std::string& path, std::string& filename)
   {
     const auto it = path.find_last_of('/');
-    if (it == std::string::npos)
-    {
-      filename.clear();
-      return;
-    }
     filename = path.substr(it+1, path.size()-it);
   }
 }
