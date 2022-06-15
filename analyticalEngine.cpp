@@ -3,10 +3,10 @@
 //
 
 #include "analyticalEngine.hpp"
-#include <iostream>
 #include <fstream>
 #include <cmath>
 #include "Util.hpp"
+
 
 analytical_engine::analytical_engine(std::vector<std::string> paths)
 {
