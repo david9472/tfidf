@@ -108,7 +108,7 @@ void analytical_engine::findMostRelevantDocument()
     rank.first = calculateCosineSim(query_, doc);
   }
 
-  std::sort(ranking.begin(), ranking.end(), [](row a, row b)
+  std::sort(ranking.begin(), ranking.end(), [](const row& a, const row& b)
   {
     return a.first > b.first;
   });
