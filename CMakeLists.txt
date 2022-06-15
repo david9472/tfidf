@@ -3,4 +3,5 @@ project(tfidf)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(tfidf main.cpp analyticalVector.cpp analyticalVector.hpp parsedFile.cpp parsedFile.hpp analyticalEngine.cpp analyticalEngine.hpp Util.hpp)
+add_executable(tfidf main.cpp analyticalVector.cpp analyticalVector.hpp parsedFile.cpp parsedFile.hpp
+        analyticalEngine.cpp analyticalEngine.hpp Util.hpp ComparisonList.hpp ComparisonList.cpp rankedList.cpp rankedList.hpp)
